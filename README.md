@@ -6,3 +6,8 @@
 <p><b>On apache2 run tail -f /var/log/apache2/access.log to get the GPS Coordinates. </p></b>
 
 <p><b> Watch the Youtube video demo for clarification </p></b>
+
+<a href="https://youtu.be/RFfnyoQFHy4" rel="nofollow">
+<img src="https://github.com/1captainnemo1/GPSLocator/blob/master/gps1.png?raw=true" alt="to_video" style="max-width:100%;">
+ </a>
+
